@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinale Bradley | Security Program Manager | Interim Top Secret Clearance</title>
+    <meta name="description" content="Enterprise security leader specializing in critical infrastructure, government compliance (NISPOM), and operational resilience. Master of Legal Studies with 14+ years of experience.">
+    <meta name="keywords" content="security program manager, NISPOM compliance, data center security, enterprise risk management, interim top secret clearance, regulatory compliance">
+    <meta name="author" content="Tinale Bradley">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-bg: #0d0d0d;
+            --secondary-bg: #1a1a1a;
+            --card-bg: #141414;
+            --accent: #FFB800;
+            --accent-hover: #FFC933;
+            --accent-dark: #CC9300;
+            --navy: #0A2540;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --text-muted: #6B6B6B;
+            --border-color: #2a2a2a;
+            --gradient-gold: linear-gradient(135deg, #FFB800 0%, #FFC933 50%, #CC9300 100%);
+            --shadow-gold: 0 0 40px rgba(255, 184, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Page Transition Overlay */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            z-index: 9999;
+            transform: translateY(-100%);
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container.scrolled {
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 20% 50%, var(--accent) 1px, transparent 1px),
+                radial-gradient(circle at 80% 50%, var(--accent) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 184, 0, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 184, 0, 0.1);
+            border: 1px solid rgba(255, 184, 0, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .accent {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 540px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary-bg);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 184, 0, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            animation: fadeInRight 1s ease;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 400px;
+            height: 480px;
+        }
+
+        .hero-image-frame {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid var(--accent);
+            opacity: 0.5;
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--secondary-bg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .hero-image-accent {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-gold);
+            opacity: 0.1;
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: 40px;
+            left: -60px;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .hero-stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .hero-stats-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        /* About Section */
+        #about {
+            background: var(--secondary-bg);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .about-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .about-content h3 span {
+            color: var(--accent);
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .about-highlights {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--card-bg);
+            border-left: 3px solid var(--accent);
+        }
+
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 184, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .highlight-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .highlight-text p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-suffix {
+            font-size: 1.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            margin-bottom: 5rem;
+        }
+
+        .skills-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-item {
+            text-align: center;
+        }
+
+        .skill-circle {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+        }
+
+        .skill-circle svg {
+            transform: rotate(-90deg);
+            width: 120px;
+            height: 120px;
+        }
+
+        .skill-circle circle {
+            fill: none;
+            stroke-width: 8;
+        }
+
+        .skill-circle .bg {
+            stroke: var(--border-color);
+        }
+
+        .skill-circle .progress {
+            stroke: var(--accent);
+            stroke-linecap: round;
+            stroke-dasharray: 314;
+            stroke-dashoffset: 314;
+            transition: stroke-dashoffset 1.5s ease;
+        }
+
+        .skill-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .skill-name {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Education & Certifications */
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .credential-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .credential-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .credential-card h4 {
+            color: var(--accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .credential-card ul {
+            list-style: none;
+        }
+
+        .credential-card li {
+            color: var(--text-secondary);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .credential-card li:last-child {
+            border-bottom: none;
+        }
+
+        .credential-card li i {
+            color: var(--accent);
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background: var(--primary-bg);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--accent);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: var(--secondary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 184, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-category {
+            color: var(--accent);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .portfolio-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Portfolio Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--secondary-bg);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg);
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--accent);
+            color: var(--primary-bg);
+        }
+
+        .modal-header {
+            height: 250px;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--accent);
+            opacity: 0.3;
+        }
+
+        .modal-body {
+            padding: 2.5rem;
+        }
+
+        .modal-category {
+            color: var(--accent);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+
+        .modal-section h4 {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .modal-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            margin-top: 2rem;
+        }
+
+        .modal-detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .modal-detail-label {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .modal-detail-value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Experience Section */
+        #experience {
+            background: var(--secondary-bg);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 40px);
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 40px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 4px solid var(--secondary-bg);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            max-width: 400px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            list-style: none;
+        }
+
+        .timeline-description li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .timeline-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .current-badge {
+            display: inline-block;
+            background: rgba(255, 184, 0, 0.1);
+            color: var(--accent);
+            font-size: 0.7rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 0.5rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--primary-bg);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 184, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details a,
+        .contact-details span {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--primary-bg);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 2;
+            }
+
+            .hero-image-container {
+                order: 1;
+            }
+
+            .hero-description {
+                margin: 0 auto 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                width: 300px;
+                height: 360px;
+            }
+
+            .hero-stats {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--secondary-bg);
+                flex-direction: column;
+                padding: 6rem 2rem;
+                gap: 1.5rem;
+                transition: right 0.3s ease;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .mobile-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.25rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .hero-image-wrapper {
+                width: 250px;
+                height: 300px;
+            }
+
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Navigation -->
+    <header class="nav-container">
+        <nav>
+            <a href="#home" class="logo">Tinale<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    Interim Top Secret Clearance
+                </div>
+                <h1 class="hero-title">
+                    Operational Resilience.<br>
+                    Enterprise Security.<br>
+                    <span class="accent">AI Governance.</span>
+                </h1>
+                <p class="hero-subtitle">Security Program Manager | Master of Legal Studies</p>
+                <p class="hero-description">
+                    I design and manage scalable security programs for critical infrastructure. With over 14 years of leadership experience, a Master's in Regulatory Compliance, and proven expertise protecting data centers and high-profile government assets, I transform complex operational risks into resilient strategic advantages.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <i class="fas fa-briefcase"></i>
+                        View Portfolio
+                    </a>
+                    <a href="#" class="btn btn-outline" id="downloadResume">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-frame"></div>
+                    <div class="hero-image">
+                        <img src="assets/img/headshot.webp" alt="Tinale Bradley - Security Program Manager">
+                    </div>
+                    <div class="hero-image-accent"></div>
+                    <div class="hero-stats">
+                        <div class="hero-stats-number">14+</div>
+                        <div class="hero-stats-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Get to Know Me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Building Security <span>from the Ground Up</span></h3>
+                    <p>
+                        I am a builder who thrives in high-stakes environments. From coordinating security for Presidential site visits to ensuring Data Center integrity during thermal outages, I bring a resilience-first mindset to physical security.
+                    </p>
+                    <p>
+                        My background offers a unique "dual perspective": I have managed a $15M security P&L as a vendor, and I now protect critical government infrastructure as a client. Combined with my Master's in Regulatory Compliance and hands-on experience with AI Governance, I help organizations navigate the intersection of physical safety, legal compliance, and operational efficiency.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-item animate-on-scroll">
+                        <div class="highlight-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>High-Stakes Leadership</h4>
+                            <p>Directed security operations for Presidential site visits and managed teams during large-scale civil unrest.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item animate-on-scroll">
+                        <div class="highlight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>Vendor & Financial Authority</h4>
+                            <p>Managed a $15M P&L and 360-person workforce with deep expertise in vendor contract negotiations and SLA enforcement.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item animate-on-scroll">
+                        <div class="highlight-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h4>Academic Rigor</h4>
+                            <p>Master of Legal Studies (3.9 GPA), applying lawyer-like precision to compliance frameworks and policy design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-number"><span class="counter" data-target="14">0</span><span class="stat-suffix">+</span></div>
+                    <div class="stat-label">Years of Security Leadership</div>
+                </div>
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-number">$<span class="counter" data-target="15">0</span><span class="stat-suffix">M</span></div>
+                    <div class="stat-label">Portfolio Managed</div>
+                </div>
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-number"><span class="counter" data-target="360">0</span><span class="stat-suffix">+</span></div>
+                    <div class="stat-label">Staff Supervised</div>
+                </div>
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-number"><span class="counter" data-target="100">0</span><span class="stat-suffix">%</span></div>
+                    <div class="stat-label">Crisis Response Success</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills-section">
+                <h3>Core Competencies</h3>
+                <div class="skills-grid">
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-circle">
+                            <svg>
+                                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50" data-percent="95"></circle>
+                            </svg>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-name">Strategic Risk Management</div>
+                    </div>
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-circle">
+                            <svg>
+                                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50" data-percent="90"></circle>
+                            </svg>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-name">Government Compliance (NISPOM)</div>
+                    </div>
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-circle">
+                            <svg>
+                                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50" data-percent="95"></circle>
+                            </svg>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-name">Crisis Response</div>
+                    </div>
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-circle">
+                            <svg>
+                                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50" data-percent="90"></circle>
+                            </svg>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-name">Data Center Security</div>
+                    </div>
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-circle">
+                            <svg>
+                                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50" data-percent="90"></circle>
+                            </svg>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-name">Vendor & Contract Management</div>
+                    </div>
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-circle">
+                            <svg>
+                                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50" data-percent="85"></circle>
+                            </svg>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-name">Operational Automation</div>
+                    </div>
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-circle">
+                            <svg>
+                                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50" data-percent="85"></circle>
+                            </svg>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-name">Budget & P&L Management</div>
+                    </div>
+                    <div class="skill-item animate-on-scroll">
+                        <div class="skill-circle">
+                            <svg>
+                                <circle class="bg" cx="60" cy="60" r="50"></circle>
+                                <circle class="progress" cx="60" cy="60" r="50" data-percent="95"></circle>
+                            </svg>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-name">Team Leadership</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credentials -->
+            <div class="credentials-grid">
+                <div class="credential-card animate-on-scroll">
+                    <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> <strong>Drexel University</strong> – Master of Legal Studies (MLS) | 2025<br>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">Concentration: Pharmaceutical & Medical Device Regulatory Compliance | GPA: 3.9<br>Capstone: Enterprise Risk Assessment & Compliance Program Design (ISO 31000)</span></li>
+                        <li><i class="fas fa-chevron-right"></i> <strong>Capella University</strong> – B.S. Criminal Justice | 2023<br>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">Management & Leadership Focus | GPA: 3.4</span></li>
+                    </ul>
+                </div>
+                <div class="credential-card animate-on-scroll">
+                    <h4><i class="fas fa-certificate"></i> Certifications</h4>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> Certified Data Center Security Professional (CDCSP)</li>
+                        <li><i class="fas fa-chevron-right"></i> AI Governance: Risk Management & Safety</li>
+                        <li><i class="fas fa-chevron-right"></i> AWS Certified: Security Fundamentals</li>
+                        <li><i class="fas fa-chevron-right"></i> DCSA/CDSE: Insider Threat Awareness, Industrial Security</li>
+                        <li><i class="fas fa-chevron-right"></i> Lean Six Sigma Champion</li>
+                        <li><i class="fas fa-chevron-right"></i> Certified Kaizen Facilitator</li>
+                        <li><i class="fas fa-chevron-right"></i> 5S Certified</li>
+                    </ul>
+                </div>
+                <div class="credential-card animate-on-scroll">
+                    <h4><i class="fas fa-tools"></i> Technical Stack</h4>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> Microsoft Power BI (Dashboard Architecture)</li>
+                        <li><i class="fas fa-chevron-right"></i> Lenel S2 & C-Cure (Access Control)</li>
+                        <li><i class="fas fa-chevron-right"></i> Milestone XProtect (Video Management)</li>
+                        <li><i class="fas fa-chevron-right"></i> Veeva Vault (Compliance/Document Management)</li>
+                        <li><i class="fas fa-chevron-right"></i> Jira & SAP (Project Management/ERP)</li>
+                        <li><i class="fas fa-chevron-right"></i> cGMP/FDA Standards, NISPOM, ISO 31000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Featured Work</span>
+                <h2 class="section-title">My Portfolio</h2>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card animate-on-scroll" data-modal="modal1">
+                    <div class="portfolio-image">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Crisis Management</div>
+                        <h3 class="portfolio-title">Critical Infrastructure Resilience</h3>
+                        <p class="portfolio-excerpt">Executed emergency thermal monitoring protocols to prevent asset loss and maintain 100% site integrity during crisis events.</p>
+                        <span class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card animate-on-scroll" data-modal="modal2">
+                    <div class="portfolio-image">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Operational Automation</div>
+                        <h3 class="portfolio-title">Digital Transformation at Scale</h3>
+                        <p class="portfolio-excerpt">Designed custom Power BI dashboard ecosystem, reducing administrative overhead by 30% across a $15M portfolio.</p>
+                        <span class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card animate-on-scroll" data-modal="modal3">
+                    <div class="portfolio-image">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Academic Research</div>
+                        <h3 class="portfolio-title">Enterprise Risk Framework</h3>
+                        <p class="portfolio-excerpt">Master's Capstone: Comprehensive compliance framework utilizing ISO 31000 and NIST standards for enterprise-level risk.</p>
+                        <span class="portfolio-link">View Case Study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modals -->
+    <div class="modal-overlay" id="modal1">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-server"></i>
+            </div>
+            <div class="modal-body">
+                <div class="modal-category">Crisis Management</div>
+                <h3 class="modal-title">Critical Infrastructure Resilience</h3>
+                
+                <div class="modal-section">
+                    <h4>Challenge</h4>
+                    <p>Data center operations faced thermal system failures threatening server uptime and asset integrity. The situation required immediate action to prevent catastrophic data loss and service interruption.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Solution</h4>
+                    <p>Executed emergency thermal monitoring protocols and coordinated cross-functional response teams to stabilize the environment. Implemented real-time monitoring dashboards and established communication channels with all stakeholders.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Result</h4>
+                    <p>Prevented asset loss and maintained 100% site integrity during crisis events, ensuring zero downtime for critical infrastructure. Established new protocols that have since been adopted as standard operating procedures.</p>
+                </div>
+
+                <div class="modal-details">
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Category</span>
+                        <span class="modal-detail-value">Crisis Management</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Client Type</span>
+                        <span class="modal-detail-value">Critical Infrastructure / Data Center</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Tools Used</span>
+                        <span class="modal-detail-value">Emergency Response Protocols</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Outcome</span>
+                        <span class="modal-detail-value">100% Site Integrity Maintained</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal2">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-chart-bar"></i>
+            </div>
+            <div class="modal-body">
+                <div class="modal-category">Operational Automation</div>
+                <h3 class="modal-title">Digital Transformation at Scale</h3>
+                
+                <div class="modal-section">
+                    <h4>Challenge</h4>
+                    <p>A security district managing $15M in assets lacked real-time visibility into workforce performance and financial health. Manual reporting processes were time-consuming and prone to errors.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Solution</h4>
+                    <p>Designed a custom Microsoft Power BI dashboard ecosystem, integrating Teams, Forms, and Excel to automate reporting workflows. Created intuitive visualizations for leadership to monitor KPIs in real-time.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Result</h4>
+                    <p>Reduced administrative overhead by 30% and provided leadership with real-time operational intelligence for data-driven decision-making. The solution has been recognized as a best practice within the organization.</p>
+                </div>
+
+                <div class="modal-details">
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Category</span>
+                        <span class="modal-detail-value">Operational Automation</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Scale</span>
+                        <span class="modal-detail-value">$15M Portfolio, 360+ Staff</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Tools Used</span>
+                        <span class="modal-detail-value">Power BI, Teams, Forms, Excel</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Impact</span>
+                        <span class="modal-detail-value">30% Overhead Reduction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal3">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-balance-scale"></i>
+            </div>
+            <div class="modal-body">
+                <div class="modal-category">Academic Research / Compliance Framework</div>
+                <h3 class="modal-title">Enterprise Risk Framework</h3>
+                
+                <div class="modal-section">
+                    <h4>Focus</h4>
+                    <p>Master of Legal Studies in Regulatory Compliance capstone project focused on developing practical frameworks for enterprise risk management in highly regulated industries.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Scope</h4>
+                    <p>Developed a comprehensive compliance framework utilizing ISO 31000 and NIST standards to assess and mitigate enterprise-level risk. The framework addresses both legal mandates and operational execution requirements.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Application</h4>
+                    <p>Designed for highly regulated industries, bridging the gap between legal mandates and operational execution. Framework applied to government contracting environments requiring NISPOM compliance.</p>
+                </div>
+
+                <div class="modal-details">
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Category</span>
+                        <span class="modal-detail-value">Academic Research</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Standards</span>
+                        <span class="modal-detail-value">ISO 31000, NIST, NISPOM</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Application</span>
+                        <span class="modal-detail-value">Government Contracting</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <span class="modal-detail-label">Industry</span>
+                        <span class="modal-detail-value">Critical Infrastructure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Career Journey</span>
+                <h2 class="section-title">Experience & Leadership</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content animate-on-scroll">
+                        <div class="timeline-date">June 2025 – Present <span class="current-badge">Current</span></div>
+                        <h3 class="timeline-title">Program Manager</h3>
+                        <div class="timeline-company">Securitas Critical Infrastructure Services | New York & Pennsylvania</div>
+                        <ul class="timeline-description">
+                            <li>Government Compliance (NISPOM), Insider Threat Programs, SCIF Management</li>
+                            <li>Vendor Oversight & Contract Management</li>
+                            <li>Security Clearance: Interim Top Secret</li>
+                            <li>Leading security operations for high-clearance federal contract sites</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content animate-on-scroll">
+                        <div class="timeline-date">July 2020 – June 2025</div>
+                        <h3 class="timeline-title">District Manager</h3>
+                        <div class="timeline-company">Securitas | Allentown, PA</div>
+                        <ul class="timeline-description">
+                            <li>Managed $15M P&L across multiple critical infrastructure sites</li>
+                            <li>Supervised 360+ security personnel</li>
+                            <li>Contract Negotiation, Strategic Growth, Performance Optimization</li>
+                            <li>Oversaw multi-site operations including data centers and high-profile assets</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content animate-on-scroll">
+                        <div class="timeline-date">July 2019 – July 2020</div>
+                        <h3 class="timeline-title">Field Service Manager</h3>
+                        <div class="timeline-company">Securitas</div>
+                        <ul class="timeline-description">
+                            <li>Operational Auditing & Quality Assurance</li>
+                            <li>Training & Development Programs</li>
+                            <li>Performance Management & Client Relations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content animate-on-scroll">
+                        <div class="timeline-date">July 2014 – July 2019</div>
+                        <h3 class="timeline-title">Account Manager</h3>
+                        <div class="timeline-company">Securitas</div>
+                        <ul class="timeline-description">
+                            <li>Collaborated with client stakeholders to tailor security programs to business needs, securing a 98% retention rate</li>
+                            <li>Managed client expectations and delivered consistent operational updates and strategic reviews</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content animate-on-scroll">
+                        <div class="timeline-date">July 2011 – July 2014</div>
+                        <h3 class="timeline-title">Site Supervisor</h3>
+                        <div class="timeline-company">Securitas</div>
+                        <ul class="timeline-description">
+                            <li>Incident Response & Crisis Management</li>
+                            <li>Personnel Management & Scheduling</li>
+                            <li>Client Relations & Service Delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn btn-primary" id="downloadResumeExp">
+                    <i class="fas fa-download"></i>
+                    Download Full Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Let's Connect</span>
+                <h2 class="section-title">Get in Touch</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <h3>Don't Be Shy!</h3>
+                    <p>I'm always open to discussing enterprise security challenges, compliance strategy, or opportunities to build resilient operations. Let's connect.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Me</h4>
+                            <a href="mailto:Tinale.bradley@hotmail.com">Tinale.bradley@hotmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Call Me</h4>
+                            <a href="tel:+15709949654">(570) 994-9654</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <span>East Stroudsburg, PA (Open to Travel/Relocation)</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/tinalebradley/" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form animate-on-scroll" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tinale Bradley. All rights reserved. | Built with precision and purpose.</p>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        const navContainer = document.querySelector('.nav-container');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navContainer.classList.add('scrolled');
+            } else {
+                navContainer.classList.remove('scrolled');
+            }
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinksAll = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinksAll.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animate on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animateElements.forEach(el => observer.observe(el));
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    updateCounter();
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        // Skill circle animation
+        const skillCircles = document.querySelectorAll('.skill-circle .progress');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const circle = entry.target;
+                    const percent = parseInt(circle.getAttribute('data-percent'));
+                    const circumference = 314; // 2 * PI * 50
+                    const offset = circumference - (percent / 100) * circumference;
+                    circle.style.strokeDashoffset = offset;
+                    skillObserver.unobserve(circle);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillCircles.forEach(circle => skillObserver.observe(circle));
+
+        // Portfolio modals
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
+        const modals = document.querySelectorAll('.modal-overlay');
+        const closeButtons = document.querySelectorAll('.modal-close');
+
+        portfolioCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.modal-overlay').classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modals.forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const mailtoLink = `mailto:Tinale.bradley@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+            window.location.href = mailtoLink;
+        });
+
+        // Resume download placeholder
+        document.getElementById('downloadResume').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Resume download will be available soon. Please contact me directly for my current resume.');
+        });
+
+        document.getElementById('downloadResumeExp').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Resume download will be available soon. Please contact me directly for my current resume.');
+        });
+
+        // Page transition effect on navigation
+        const pageTransition = document.querySelector('.page-transition');
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && href.length > 1) {
+                    // Smooth scroll without page transition for same-page links
+                    e.preventDefault();
+               
